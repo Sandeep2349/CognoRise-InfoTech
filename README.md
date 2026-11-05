@@ -23,24 +23,46 @@ CognoRise InfoTech/
 │   ├── style.css                      # Custom design tokens, glassmorphism, responsive styles
 │   └── script.js                      # Canvas particle physics, cursor lerp, tilt, and validation
 │
-└── E-commerce Product Listing/        # Task 2: E-Commerce Product Listing Application
-    ├── index.html                     # React SPA entry point
-    ├── package.json                   # React 19 + Vite dependencies
-    ├── test-e2e.cjs                   # Automated Playwright test suite (28/28 tests passed)
-    └── src/
-        ├── App.jsx                    # Application layout and filtering orchestrator
-        ├── index.css                  # Modern dark-glass e-commerce responsive styling
-        ├── components/
-        │   ├── Navbar.jsx             # Brand header with cart counter badge
-        │   ├── FilterBar.jsx          # Search bar, category chips, sort, and reset
-        │   ├── ProductCard.jsx        # Product presentation with Add to Cart action
-        │   ├── ProductList.jsx        # Auto-fitting product grid & empty state
-        │   ├── CartDrawer.jsx         # Slide-out modal cart with quantity controls & order summary
-        │   └── Toast.jsx              # Action feedback toast notification
-        ├── data/
-        │   └── products.js            # Curated catalog of 12 tech products
-        └── hooks/
-            └── useCart.js             # Custom hook for cart state & LocalStorage persistence
+├── E-commerce Product Listing/        # Task 2: E-Commerce Product Listing Application
+│   ├── index.html                     # React SPA entry point
+│   ├── package.json                   # React 19 + Vite dependencies
+│   └── src/
+│       ├── App.jsx                    # Application layout and filtering orchestrator
+│       ├── index.css                  # Modern dark-glass e-commerce responsive styling
+│       ├── components/
+│       │   ├── Navbar.jsx             # Brand header with cart counter badge
+│       │   ├── FilterBar.jsx          # Search bar, category chips, sort, and reset
+│       │   ├── ProductCard.jsx        # Product presentation with Add to Cart action
+│       │   ├── ProductList.jsx        # Auto-fitting product grid & empty state
+│       │   ├── CartDrawer.jsx         # Slide-out modal cart with quantity controls & order summary
+│       │   └── Toast.jsx              # Action feedback toast notification
+│       ├── data/
+│       │   └── products.js            # Curated catalog of 12 tech products
+│       └── hooks/
+│           └── useCart.js             # Custom hook for cart state & LocalStorage persistence
+│
+└── blog-platform-api/                 # Task 3: Blog Platform REST API
+    ├── config/
+    │   └── db.js                      # MongoDB Atlas connection & ping verification
+    ├── controllers/
+    │   ├── authController.js          # Registration, login, profile retrieval logic
+    │   └── postController.js          # Blog CRUD logic with strict ownership checks
+    ├── middleware/
+    │   └── authMiddleware.js          # JWT Bearer token authentication middleware
+    ├── models/
+    │   ├── User.js                    # User schema with regex email & select:false password
+    │   └── Post.js                    # Post schema with ObjectId User relational reference
+    ├── routes/
+    │   ├── authRoutes.js              # /api/auth route definitions
+    │   └── postRoutes.js              # /api/posts route definitions
+    ├── utils/
+    │   └── generateToken.js           # JWT token generation utility
+    ├── .env.example                   # Sanitized environment variable template
+    ├── .gitignore                     # Excludes .env, node_modules, and logs
+    ├── Blog_Platform_API.postman_collection.json # 22-request verified Postman test suite
+    ├── package.json                   # Express 5, Mongoose 9, bcryptjs, JWT dependencies
+    ├── server.js                      # Express application entry point
+    └── README.md                      # In-depth API & endpoint documentation
 ```
 
 ---
@@ -73,6 +95,19 @@ A complete, beginner-friendly yet production-grade React e-commerce catalog feat
 
 ---
 
+## 📝 Task 3 — Blog Platform REST API
+A secure, scalable RESTful API built with **Node.js**, **Express.js**, **MongoDB Atlas**, and **JSON Web Tokens (JWT)** for a multi-user blogging platform with strict ownership controls.
+
+### ✨ Key Features:
+- **Stateless JWT Authentication:** Secure user registration with RFC email regex validation and password hashing via `bcryptjs` (salt factor 10).
+- **Relational Post-to-User Association:** Blog posts reference their author via Mongoose `ObjectId` references and populate public profile attributes (`name`, `email`).
+- **Strict Authorization & Ownership Guard:** Modifying (`PUT`) or deleting (`DELETE`) posts is strictly restricted to the original author; unauthorized attempts return `HTTP 403 Forbidden`.
+- **Public & Protected Endpoints:** Public listing (`GET /api/posts`) and detail views (`GET /api/posts/:id`) with newest-first ordering; creation, updates, and deletions require a valid Bearer JWT.
+- **Defensive Error Handling:** Graceful handling for duplicate emails, invalid ObjectId formats, missing authorization headers, and Mongoose schema validation errors.
+- **22-Test Postman Collection:** Verified complete test suite (`Blog_Platform_API.postman_collection.json`) covering all positive and negative scenarios (22/22 passed).
+
+---
+
 ## 💻 Quick Run Instructions
 
 ### Running Task 1 (Portfolio)
@@ -90,11 +125,13 @@ npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173).
 
-### Running Automated Tests for Task 2
+### Running Task 3 (Blog Platform REST API)
 ```powershell
-cd "E-commerce Product Listing"
-node test-e2e.cjs
+cd blog-platform-api
+npm install
+npm run dev
 ```
+API runs on [http://localhost:5000](http://localhost:5000). Refer to [`blog-platform-api/README.md`](blog-platform-api/README.md) for full endpoint specifications.
 
 ---
 
