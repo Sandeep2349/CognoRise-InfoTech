@@ -8,71 +8,93 @@
 ---
 
 ## 📌 Repository Overview
-This repository contains the assignments and project deliverables completed as part of the **CognoRise InfoTech Web Development Internship (October 2026)**.
+This repository contains the verified assignments and project deliverables completed as part of the **CognoRise InfoTech Web Development Internship (October 2026)**.
+
+---
+
+## 📂 Repository Structure
+```plaintext
+CognoRise InfoTech/
+│
+├── README.md                          # Main internship documentation
+│
+├── Portfolio/                         # Task 1: Premium Personal Portfolio Website
+│   ├── index.html                     # Semantic layout and accessible structure
+│   ├── style.css                      # Custom design tokens, glassmorphism, responsive styles
+│   └── script.js                      # Canvas particle physics, cursor lerp, tilt, and validation
+│
+└── E-commerce Product Listing/        # Task 2: E-Commerce Product Listing Application
+    ├── index.html                     # React SPA entry point
+    ├── package.json                   # React 19 + Vite dependencies
+    ├── test-e2e.cjs                   # Automated Playwright test suite (28/28 tests passed)
+    └── src/
+        ├── App.jsx                    # Application layout and filtering orchestrator
+        ├── index.css                  # Modern dark-glass e-commerce responsive styling
+        ├── components/
+        │   ├── Navbar.jsx             # Brand header with cart counter badge
+        │   ├── FilterBar.jsx          # Search bar, category chips, sort, and reset
+        │   ├── ProductCard.jsx        # Product presentation with Add to Cart action
+        │   ├── ProductList.jsx        # Auto-fitting product grid & empty state
+        │   ├── CartDrawer.jsx         # Slide-out modal cart with quantity controls & order summary
+        │   └── Toast.jsx              # Action feedback toast notification
+        ├── data/
+        │   └── products.js            # Curated catalog of 12 tech products
+        └── hooks/
+            └── useCart.js             # Custom hook for cart state & LocalStorage persistence
+```
 
 ---
 
 ## 🚀 Task 1 — Premium Personal Portfolio Website
+A modern, high-performance personal portfolio website built with pure semantic web standards (**HTML5**, **CSS3**, and **Vanilla ES6+ JavaScript**), designed with an Awwwards-style dark glassmorphism aesthetic.
 
-A modern, high-performance personal portfolio website built with pure semantic web standards (**HTML5**, **CSS3**, and **Vanilla ES6+ JavaScript**), designed with a dark glassmorphism aesthetic and interactive features.
-
-### ✨ Key Features & Engineering Highlights
-- **HTML5 Canvas Particle Atmosphere**: Zero-dependency background particle engine rendering floating stardust nodes with proximity constellation lines, pointer attraction/repulsion, and interactive click shockwave ripples.
-- **Fluid Magnetic Custom Cursor**: Ethereal dual-ring custom cursor on desktop with smooth lerp interpolation that magnetically expands on clickable elements.
-- **Dynamic Role Typewriter**: Interactive headline cycling through core competencies (*Full Stack Web Developer, MERN Architecture Specialist, Creative Frontend Engineer, Clean Code Enthusiast, Problem Solver*).
-- **Interactive Developer Terminal (`sandeep.config.ts`)**: macOS-style terminal card with syntax-highlighted TypeScript snippet and one-click code copy button.
-- **Modern Bento Grid Architecture**: 12-column responsive Bento Grid in the About section highlighting education, internship experience, MERN architecture, and live availability status.
-- **Spotlight Border Glow**: Linear/Raycast style dynamic border illumination tracking cursor coordinates in real time.
-- **3D Tilt with Holographic Glare**: Perspective tilt physics on project cards with glossy reflective sheen overlays (`.card-glare`).
-- **Interactive Skills Filtering**: Category filter tabs (*All, Frontend, Backend & DB, Tools*) with instant transitions.
-- **Accessible Client-Side Form Validation**: Real-time message character counter, RFC 5322 regex email checking, accessible inline alerts, and `aria-invalid` state synchronization.
-- **One-Click Email Copy Hub**: Quick-copy card for instant contact with animated toast notifications.
-- **Circular Scroll-Progress Indicator**: Floating back-to-top button featuring an SVG circular progress ring indicating reading percentage.
-- **WCAG AA Compliance**: High-contrast typography, visible focus rings, responsive down to 320px screens, and complete `prefers-reduced-motion` overrides.
+### ✨ Key Features:
+- **Native Canvas Particle Physics**: Dynamic background stardust particles with proximity constellation lines, pointer attraction/repulsion, and interactive click shockwave ripples.
+- **Fluid Magnetic Custom Cursor**: Ethereal dual-ring custom cursor with smooth lerp physics that expands on interactive elements.
+- **Dynamic Role Typewriter**: Interactive headline cycling through core competencies.
+- **Interactive Developer Terminal (`sandeep.config.ts`)**: macOS-style code card with syntax highlighting and one-click copy button.
+- **Bento Grid Layout**: 12-column responsive Bento Grid in the About section.
+- **Spotlight Border Glow & 3D Tilt**: Linear/Raycast-style dynamic border illumination and holographic glare reflection.
+- **Accessible Form Validation**: Real-time error clearance, RFC 5322 regex email checking, and `aria-invalid` synchronization.
 
 ---
 
-## 🛠️ Technology Stack
-- **Structure:** Semantic HTML5
-- **Styling:** CSS3 (Custom Design Tokens, Flexbox, CSS Grid, Glassmorphism Backdrop Filters)
-- **Scripting:** Vanilla JavaScript (ES6+, Native Canvas API, IntersectionObserver)
-- **Typography:** Google Fonts (*Outfit*, *Inter*, *JetBrains Mono*)
-- **Icons:** FontAwesome 6.4.0
+## 🛍️ Task 2 — E-Commerce Product Listing Application
+A complete, beginner-friendly yet production-grade React e-commerce catalog featuring real-time search, category filtering, a persistent shopping cart, and zero backend dependencies.
+
+### ✨ Key Features:
+- **Responsive Product Grid:** Displays curated tech products with high-definition imagery, category pills, ratings, prices, and Add to Cart actions.
+- **Shopping Cart with Duplicate Prevention:** Adding an existing item increments quantity rather than creating duplicate entries.
+- **Quantity Stepper & Bounds Guard:** Increase (`+`) and decrease (`-`) controls with a strict lower bound of 1 (requires explicit removal action).
+- **Concurrent Search & Category Filtering:** Search by name and filter by category work together in real time with sort options.
+- **LocalStorage State Engine:** Cart persists across page reloads and defensively handles malformed/corrupted data without crashing.
+- **Accessible Modal Drawer:** Keyboard-accessible slide-out cart with `Escape` key support, order summary, free shipping progress bar, and empty states.
+- **Automated End-to-End Testing:** Fully tested across 7 test suites via Playwright with **28 out of 28 tests passing** (0 failures).
 
 ---
 
-## 📂 Project Structure
-```plaintext
-CognoRise InfoTech/
-│
-├── README.md               # Internship documentation and overview
-└── Portfolio/              # Task 1: Personal Portfolio Website
-    ├── index.html          # Semantic layout and accessible structure
-    ├── style.css           # Design tokens, glassmorphism, responsive styles
-    └── script.js           # Canvas physics, cursor lerp, tilt, and validation
-```
+## 💻 Quick Run Instructions
 
----
-
-## 💻 Setup & Run Instructions
-
-No build steps, bundlers, or package installations required.
-
-### Option 1: Python HTTP Server (Recommended)
+### Running Task 1 (Portfolio)
 ```powershell
 cd Portfolio
 python -m http.server 8080
 ```
-Open your browser at `http://localhost:8080`.
+Open [http://localhost:8080](http://localhost:8080).
 
-### Option 2: Node.js Serve
+### Running Task 2 (E-Commerce Product Listing)
 ```powershell
-cd Portfolio
-npx --yes serve .
+cd "E-commerce Product Listing"
+npm install
+npm run dev
 ```
+Open [http://localhost:5173](http://localhost:5173).
 
-### Option 3: Direct File Opening
-Double-click or open `Portfolio/index.html` in any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari).
+### Running Automated Tests for Task 2
+```powershell
+cd "E-commerce Product Listing"
+node test-e2e.cjs
+```
 
 ---
 
