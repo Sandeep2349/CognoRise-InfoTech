@@ -257,6 +257,18 @@ Base URL: `http://localhost:5000/api`
   }
   ```
 
+#### `DELETE /api/auth/me`
+* **Access**: Private (Requires `Authorization: Bearer <token>`)
+* **Description**: Permanently deletes the authenticated user's account and automatically cascade-deletes all blog posts authored by this user.
+* **Success Response (`200 OK`)**:
+  ```json
+  {
+    "success": true,
+    "message": "User account and all associated posts deleted successfully",
+    "deletedPostsCount": 2
+  }
+  ```
+
 ---
 
 ### 2. Blog Post CRUD Endpoints (`/api/posts`)

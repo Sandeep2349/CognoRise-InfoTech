@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
+const Post = require("../models/Post");
 const generateToken = require("../utils/generateToken");
 
 /**
@@ -163,8 +164,38 @@ const getMe = async (req, res) => {
   }
 };
 
+/**
+ * @desc    Delete current user account & cascade-delete their posts
+ * @route   DELETE /api/auth/me
+ * @access  Private (Protected by authMiddleware)
+ */
+const deleteAccount = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // 1. Cascade delete all posts authored by this user
+    const deletedPostsResult = await Post.deleteMany({ author: userId });
+
+    // 2. Permanently delete the user document
+    await User.findByIdAndDelete(userId);
+
+    return res.status(200).json({
+      success: true,
+      message: "User account and all associated posts deleted successfully",
+      deletedPostsCount: deletedPostsResult.deletedCount
+    });
+  } catch (error) {
+    console.error("Delete Account Error:", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Server error occurred while deleting account"
+    });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
-  getMe
+  getMe,
+  deleteAccount
 };
