@@ -379,10 +379,14 @@ document.addEventListener('DOMContentLoaded', () => {
   name: "Sandeep Kumar",
   role: "Full Stack Web Developer",
   internship: "CognoRise InfoTech",
-  focus: ["High-Performance Frontend", "Scalable REST APIs", "Intuitive UI/UX"],
+  tasksCompleted: [
+    "Task 1: Personal Portfolio Website",
+    "Task 2: React E-Commerce Store",
+    "Task 3: Blog REST API with JWT"
+  ],
   coreStack: {
-    frontend: ["HTML5", "CSS3", "JavaScript", "React"],
-    backend: ["Node.js", "Express.js", "MongoDB", "MySQL"]
+    frontend: ["HTML5/CSS3", "JavaScript", "React.js"],
+    backend: ["Node.js", "Express.js", "MongoDB Atlas", "JWT"]
   },
   status: "Open to Opportunities 🚀"
 };`;

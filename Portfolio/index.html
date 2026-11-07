@@ -142,14 +142,14 @@
   <span class="token-key">name</span>: <span class="token-string">"Sandeep Kumar"</span>,
   <span class="token-key">role</span>: <span class="token-string">"Full Stack Web Developer"</span>,
   <span class="token-key">internship</span>: <span class="token-string">"CognoRise InfoTech"</span>,
-  <span class="token-key">focus</span>: [
-    <span class="token-string">"High-Performance Frontend"</span>,
-    <span class="token-string">"Scalable REST APIs"</span>,
-    <span class="token-string">"Intuitive UI/UX"</span>
+  <span class="token-key">tasksCompleted</span>: [
+    <span class="token-string">"Task 1: Personal Portfolio Website"</span>,
+    <span class="token-string">"Task 2: React E-Commerce Store"</span>,
+    <span class="token-string">"Task 3: Blog REST API with JWT"</span>
   ],
   <span class="token-key">coreStack</span>: {
-    <span class="token-prop">frontend</span>: [<span class="token-string">"HTML5"</span>, <span class="token-string">"CSS3"</span>, <span class="token-string">"JavaScript"</span>, <span class="token-string">"React"</span>],
-    <span class="token-prop">backend</span>: [<span class="token-string">"Node.js"</span>, <span class="token-string">"Express.js"</span>, <span class="token-string">"MongoDB"</span>, <span class="token-string">"MySQL"</span>]
+    <span class="token-prop">frontend</span>: [<span class="token-string">"HTML5/CSS3"</span>, <span class="token-string">"JavaScript"</span>, <span class="token-string">"React.js"</span>],
+    <span class="token-prop">backend</span>: [<span class="token-string">"Node.js"</span>, <span class="token-string">"Express.js"</span>, <span class="token-string">"MongoDB Atlas"</span>, <span class="token-string">"JWT"</span>]
   },
   <span class="token-key">status</span>: <span class="token-string">"Open to Opportunities 🚀"</span>
 };</code></pre>
@@ -411,7 +411,7 @@
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   <span>Live Preview</span>
                 </a>
-                <a href="https://github.com/Sandeep2349/" target="_blank" rel="noopener noreferrer" class="card-link btn-link-secondary">
+                <a href="https://github.com/Sandeep2349/CognoRise-InfoTech/tree/main/Portfolio" target="_blank" rel="noopener noreferrer" class="card-link btn-link-secondary">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                   <span>Code</span>
                 </a>
@@ -419,7 +419,7 @@
             </div>
           </article>
 
-          <!-- Project 2: E-Commerce Product Hub -->
+          <!-- Project 2: E-Commerce Product Listing -->
           <article class="project-card glass-card reveal" data-tilt data-spotlight>
             <div class="card-glare" aria-hidden="true"></div>
             <div class="project-window-bar" aria-hidden="true">
@@ -428,36 +428,42 @@
                 <span class="w-dot"></span>
                 <span class="w-dot"></span>
               </div>
-              <span class="window-filename">store-engine.js</span>
+              <span class="window-filename">App.jsx</span>
             </div>
 
             <div class="project-info">
               <div class="project-meta">
                 <span class="project-tag">Internship Task 2</span>
-                <span class="project-status-chip"><span class="chip-dot"></span> State Engine</span>
+                <span class="project-status-chip"><span class="chip-dot"></span> React + Vite</span>
               </div>
 
-              <h3>E-Commerce Product Hub</h3>
+              <h3>E-Commerce Product Listing Application</h3>
               <p>
-                Dynamic product catalog with instant category filtering, real-time debounced search, shopping cart management, price calculations, and persistent LocalStorage state.
+                Production-grade React application featuring real-time debounced search, concurrent category chips filtering, interactive shopping cart drawer with quantity steppers, LocalStorage persistence, and automated Playwright E2E test verification.
               </p>
 
               <div class="project-highlights">
-                <span><i class="fa-solid fa-check"></i> Real-time Filtering</span>
-                <span><i class="fa-solid fa-check"></i> Cart Persistence</span>
-                <span><i class="fa-solid fa-check"></i> Dynamic DOM Updates</span>
+                <span><i class="fa-solid fa-check"></i> React 19 &amp; Vite</span>
+                <span><i class="fa-solid fa-check"></i> Cart Drawer &amp; LocalStorage</span>
+                <span><i class="fa-solid fa-check"></i> 28/28 Playwright E2E Tests</span>
               </div>
 
               <div class="project-stack">
-                <span>JavaScript</span>
-                <span>DOM Manipulation</span>
+                <span>React.js</span>
+                <span>Vite</span>
+                <span>JavaScript (ES6+)</span>
                 <span>LocalStorage</span>
+                <span>CSS3</span>
               </div>
 
               <div class="project-links">
-                <a href="https://github.com/Sandeep2349/" target="_blank" rel="noopener noreferrer" class="card-link btn-link-primary">
+                <a href="https://github.com/Sandeep2349/CognoRise-InfoTech/tree/main/E-commerce%20Product%20Listing" target="_blank" rel="noopener noreferrer" class="card-link btn-link-primary">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span>Source Code</span>
+                  <span>View Code</span>
+                </a>
+                <a href="https://github.com/Sandeep2349/CognoRise-InfoTech/tree/main/E-commerce%20Product%20Listing#readme" target="_blank" rel="noopener noreferrer" class="card-link btn-link-secondary">
+                  <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                  <span>Documentation</span>
                 </a>
               </div>
             </div>
@@ -478,31 +484,36 @@
             <div class="project-info">
               <div class="project-meta">
                 <span class="project-tag">Internship Task 3</span>
-                <span class="project-status-chip"><span class="chip-dot"></span> MVC Architecture</span>
+                <span class="project-status-chip"><span class="chip-dot"></span> Node &amp; MongoDB</span>
               </div>
 
               <h3>Blog Platform REST API</h3>
               <p>
-                Layered MVC architecture featuring secure user registration, salted bcrypt password hashing, stateless JWT authentication, and protected CRUD endpoints for blog posts.
+                Robust backend RESTful API featuring salted bcrypt password hashing, stateless JWT Bearer authorization, full Blog Post CRUD with strict ownership controls (HTTP 403), user account deletion with cascading post cleanup, and a 24-test Postman collection.
               </p>
 
               <div class="project-highlights">
                 <span><i class="fa-solid fa-check"></i> JWT Auth Middleware</span>
-                <span><i class="fa-solid fa-check"></i> Bcrypt Salt Hashing</span>
-                <span><i class="fa-solid fa-check"></i> MongoDB Schemas</span>
+                <span><i class="fa-solid fa-check"></i> Ownership Enforcement (403)</span>
+                <span><i class="fa-solid fa-check"></i> Cascading Deletion &amp; 24 Tests</span>
               </div>
 
               <div class="project-stack">
                 <span>Node.js</span>
                 <span>Express.js</span>
+                <span>MongoDB Atlas</span>
+                <span>Mongoose</span>
                 <span>JWT</span>
-                <span>MongoDB</span>
               </div>
 
               <div class="project-links">
-                <a href="https://github.com/Sandeep2349/" target="_blank" rel="noopener noreferrer" class="card-link btn-link-primary">
+                <a href="https://github.com/Sandeep2349/CognoRise-InfoTech/tree/main/blog-platform-api" target="_blank" rel="noopener noreferrer" class="card-link btn-link-primary">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span>Source Code</span>
+                  <span>View Code</span>
+                </a>
+                <a href="https://github.com/Sandeep2349/CognoRise-InfoTech/tree/main/blog-platform-api#readme" target="_blank" rel="noopener noreferrer" class="card-link btn-link-secondary">
+                  <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+                  <span>API Docs</span>
                 </a>
               </div>
             </div>
